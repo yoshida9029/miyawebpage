@@ -1,0 +1,519 @@
+@charset "UTF-8";
+/* resset.dev • v5.0.2 */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0; /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+   # General elements
+   # ================================================================= */
+hr {
+  overflow: visible; /* Show the overflow in Edge and IE */
+  height: 0; /* Add the correct box sizing in Firefox */
+  color: inherit; /* Correct border color in Firefox. */
+}
+
+details,
+main {
+  display: block; /* Render the `main` element consistently in IE. */
+}
+
+summary {
+  display: list-item; /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+
+[hidden] {
+  display: none; /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: none; /* Remove the bottom border in Chrome 57 */
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+a {
+  background-color: transparent; /* Remove the gray background on active links in IE 10 */
+}
+
+a:active,
+a:hover {
+  outline-width: 0; /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* Specify the font family of code elements */
+}
+
+pre {
+  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+}
+
+b,
+strong {
+  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
+  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
+}
+
+iframe {
+  border-style: none;
+}
+
+/* # =================================================================
+   # Forms
+   # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px; /* Correct the outline style in Safari */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+}
+
+textarea {
+  overflow: auto; /* Internet Explorer 11+ */
+  resize: vertical; /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold; /* Restore the font weight unset by the previous rule */
+}
+
+button {
+  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+button,
+select {
+  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type=button],
+[type=reset],
+[type=submit],
+[role=button] {
+  cursor: pointer;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline-width: 0;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none; /* Firefox 36+ */
+  -webkit-appearance: none; /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none; /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor; /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge and IE */
+  white-space: normal; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+}
+
+::-webkit-file-upload-button {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
+  color: inherit;
+  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+   # Specify media element style
+   # ================================================================= */
+img {
+  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+/* # =================================================================
+   # Accessibility
+   # ================================================================= */
+/* Specify the progress cursor of updating elements */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled=true] {
+  cursor: default;
+}
+
+body {
+  background: #1A1718;
+  background: linear-gradient(162deg, rgb(26, 23, 24) 0%, rgb(116, 72, 50) 40%, rgb(12, 32, 55) 82%, rgb(3, 8, 16) 100%);
+}
+
+.title01 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+#drawerMenu ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#drawerMenu ul li {
+  display: flex;
+}
+
+.title01 h1 {
+  font-size: 1rem;
+}
+
+.sec01 {
+  display: grid;
+  grid-template-rows: 220px 90px 220px 90px;
+  grid-template-columns: 125px 125px 125px;
+}
+
+.text01 {
+  font-size: 10px;
+  line-height: 1.5rem;
+  letter-spacing: 0.25rem;
+  grid-row: 3/4;
+  grid-column: 1/4;
+  color: white;
+}
+
+.title01, #title02, #title03, #title04 {
+  background-image: url(../image/header\,image1.png);
+  height: 50px;
+  width: 375px;
+  text-align: center;
+}
+
+.title03, .pot, .barrel, .bottle01 {
+  align-items: center;
+  justify-content: center;
+}
+
+.title01 h1 {
+  font-size: 1rem;
+  max-width: 60%;
+}
+
+.title01 ul {
+  font-size: 10px;
+}
+
+.bar {
+  height: 100%;
+  width: 100%;
+  grid-column: 1/4;
+}
+
+.text01 {
+  text-align: center;
+  max-width: 100%;
+  gap: 1rem;
+}
+
+.merchandise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  gap: 90px;
+}
+
+.wheatall, .potall, .barrelall, .bottleall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.55);
+  width: 350px;
+  height: 850px;
+  border: solid 1px black;
+  text-align: center;
+  line-height: 1.2rem;
+  letter-spacing: 0.3rem;
+}
+
+.wheatall {
+  height: 650px;
+}
+
+.bottleall {
+  height: 700px;
+}
+
+.title03,
+.pot,
+.barrel,
+.bottle01 {
+  color: #595045;
+}
+
+.text02,
+.text03,
+.text04,
+.text05 {
+  line-height: 1.5rem;
+  padding: 1rem;
+  color: #595045;
+}
+
+.wheat, .putimg, .barrelimg, .bottleimg01 {
+  max-width: 100%;
+  height: 220px;
+  margin: auto 0;
+}
+
+.towbottleimg {
+  max-width: 100%;
+  height: 250px;
+}
+
+.shopimg01 {
+  width: 375px;
+  height: 230px;
+}
+
+.towbottleall, .towbottle, .bottle700, .bottle1000 {
+  background-color: rgba(255, 255, 255, 0.55);
+  max-width: 100%;
+  text-align: left;
+  padding: 1rem;
+  color: #595045;
+}
+
+.towbottle {
+  text-align: center;
+}
+
+.shoppage {
+  display: grid;
+  grid-template-rows: 100px 150px 140px 50px 100px;
+  grid-template-columns: 45px 140px 140px 45px;
+}
+
+.shopimg01 {
+  grid-row: 2/3;
+}
+
+.shop01 {
+  background-image: url(/image/shopbtn01.png);
+  text-align: center;
+  border-radius: 10px;
+  width: 310px;
+  height: 60px;
+  grid-row: 4/5;
+  grid-column: 2/4;
+}
+
+.footer {
+  background-color: #666666;
+  color: white;
+  max-width: 100%;
+  gap: 1rem;
+}
+
+.alert,
+.copy {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .title01, #title02, #title03, #title04 {
+    width: 1920px;
+  }
+  .title01 h1 {
+    font-size: 3rem;
+  }
+  #drawerMenu ul {
+    font-size: 2rem;
+    gap: 6rem;
+  }
+  .sec01 {
+    grid-template-columns: 584px 584px 584px 584px 584px;
+    grid-template-rows: 180px 180px 180px 180px 180px;
+  }
+  .bar {
+    width: 1920px;
+    height: 900px;
+    grid-column: 1/4;
+    grid-row: 1/6;
+  }
+  .text01 {
+    font-size: 20px;
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+  .title01, #title02, #title03, #title04 {
+    height: 100px;
+    width: 1920px;
+    font-size: 2.5rem;
+  }
+  .wheatall, .potall, .barrelall, .bottleall {
+    flex-direction: row;
+    width: 1200px;
+    height: 900px;
+  }
+  .towbottleall {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.55);
+    width: 1200px;
+    height: 700px;
+  }
+  .shoppage {
+    grid-template-columns: 384px 384px 384px 384px 384px;
+    grid-template-rows: 260px 260px 260px 260px 260px;
+  }
+  .shopimg01 {
+    width: 1920px;
+    height: 1300px;
+    grid-column: 1/6;
+    grid-row: 1/6;
+  }
+  .shop01 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+  }
+}/*# sourceMappingURL=style.css.map */

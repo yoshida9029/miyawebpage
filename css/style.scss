@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+// 基本設定
+body {
+    background: #1A1718;
+    background: linear-gradient(162deg, rgba(26, 23, 24, 1) 0%, rgba(116, 72, 50, 1) 40%, rgba(12, 32, 55, 1) 82%, rgba(3, 8, 16, 1) 100%);
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul { list-style: none; padding: 0; margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+.section-title {
+    background-image: url('../image/header,image1.png');
+    background-size: cover;
+    background-position: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+// ヘッダー・ナビゲーション
+.title01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 70px;
+    background-image: url('../image/header,image1.png');
+    background-size: cover;
+    position: relative;
+    z-index: 100;
+
+    h1 { font-size: 1.2rem; }
+
+    .drawerButton {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 110;
+
+        span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        &.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        &.active span:nth-child(2) { opacity: 0; }
+        &.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+
+    #drawerMenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(26, 23, 24, 0.98);
+        transition: 0.3s;
+        padding-top: 100px;
+        z-index: 105;
+
+        &.active { right: 0; }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            a { font-size: 1.2rem; }
+        }
+    }
+}
+
+// メインビジュアル
+.sec01 {
+    text-align: center;
+    .bar { width: 100%; height: auto; }
+    .text01-wrap { padding: 2rem 1.5rem; line-height: 1.8; font-size: 0.9rem; }
+}
+
+// コンテンツ共通カードデザイン
+.merchandise-item, .towbottleall, .shoppage {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #31271D;
+    margin: 0 1rem 3rem;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.item-img, .towbottleimg, .shopimg01 {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; 
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+p { text-align: left; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+.bottle-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    ul { background: rgba(255,255,255,0.5); padding: 1rem; border-radius: 5px; text-align: left; }
+}
+
+// 購入セクションの調整
+.shopall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .shoppage {
+        width: calc(100% - 2rem);
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .shop-btn-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin-top: 1rem;
+    }
+
+    .shop01 {
+        background-image: url('../image/shopbtn01.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        width: 280px;
+        height: 60px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #31271D;
+        cursor: pointer;
+        transition: opacity 0.3s;
+
+        &:hover { opacity: 0.8; }
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #2a2522;
+    .alert { font-size: 1rem; color: #e2c0a8; margin-bottom: 1rem; }
+    .copy { font-size: 0.8rem; opacity: 0.6; }
+}
+
+// ==========================================
+// PC版レイアウト (900px以上)
+// ==========================================
+@media(min-width: 900px) {
+    .title01 {
+        padding: 0 5%;
+        h1 { font-size: 2rem; }
+        .drawerButton { display: none; }
+        #drawerMenu {
+            position: static;
+            width: auto; height: auto;
+            background: transparent;
+            padding-top: 0;
+            ul { flex-direction: row; gap: 3rem; }
+        }
+    }
+
+    .sec01 {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 4rem auto;
+        gap: 3rem;
+        .bar { width: 50%; }
+        .text01-wrap { width: 50%; text-align: left; }
+    }
+
+    .merchandise-item {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto 4rem;
+        align-items: center;
+        gap: 3rem;
+        text-align: left;
+
+        .item-img {
+            width: 40%;
+            max-height: 400px;
+            margin-bottom: 0;
+        }
+        .item-content { width: 60%; }
+        &:nth-child(even) { flex-direction: row-reverse; }
+    }
+
+    // --- 購入ページ特有のPC調整 ---
+    .shoppage {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto 4rem;
+        align-items: center;
+        gap: 4rem; // 画像とボタンの間隔を広げる
+        padding: 4rem; // PC版ではカードの余白を多めに
+
+        .shopimg01 {
+            width: 50%; // モバイルでのサイズ感を維持しつつ、PCでも大きく表示
+            max-height: 500px; // 高さを400pxから500pxにアップ
+            margin-bottom: 0;
+        }
+        .shop-btn-wrapper {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .towbottleall {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 3rem;
+        .towbottleimg { width: 40%; max-height: 450px; }
+        .details-content { width: 60%; text-align: left; }
+        .bottle-lists { flex-direction: row; }
+    }
+}

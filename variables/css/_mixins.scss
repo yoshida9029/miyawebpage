@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin textStyle($color : #333333) {
+    // 引数の$color
+    color: $color;
+    text-align: center;
+    // SCSS変数の$textColor
+    padding: $textColor ;
+}

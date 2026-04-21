@@ -1,0 +1,17 @@
+// SCSS CSS変数について
+$mainColor: #ccafcc;
+$baseColor: #eeeeee;
+$accentColor: #7fffff;
+$paddingS: 0.5rem;
+$contentWidth: 600px;
+$textColor: 20px;
+
+
+// 通常のCSS変数の書き方
+:root {
+    --maincolor: #ccafcc;
+    --baseColor: #eeeeee;
+    --accentColor: #7fffff;
+    --paddingS: 0.5rem;
+    --contentWidth: 1200px;
+}

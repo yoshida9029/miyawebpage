@@ -1,519 +1,291 @@
-@charset "UTF-8";
-/* resset.dev • v5.0.2 */
-/* # =================================================================
-   # Global selectors
-   # ================================================================= */
-html {
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
-  word-break: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
-}
-
-*,
-::before,
-::after {
-  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
-  box-sizing: inherit;
-}
-
-::before,
-::after {
-  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
-  vertical-align: inherit;
-}
-
-* {
-  padding: 0; /* Reset `padding` and `margin` of all elements */
-  margin: 0;
-}
-
-/* # =================================================================
-   # General elements
-   # ================================================================= */
-hr {
-  overflow: visible; /* Show the overflow in Edge and IE */
-  height: 0; /* Add the correct box sizing in Firefox */
-  color: inherit; /* Correct border color in Firefox. */
-}
-
-details,
-main {
-  display: block; /* Render the `main` element consistently in IE. */
-}
-
-summary {
-  display: list-item; /* Add the correct display in all browsers */
-}
-
-small {
-  font-size: 80%; /* Set font-size to 80% in `small` elements */
-}
-
-[hidden] {
-  display: none; /* Add the correct display in IE */
-}
-
-abbr[title] {
-  border-bottom: none; /* Remove the bottom border in Chrome 57 */
-  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-a {
-  background-color: transparent; /* Remove the gray background on active links in IE 10 */
-}
-
-a:active,
-a:hover {
-  outline-width: 0; /* Remove the outline when hovering in all browsers */
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace; /* Specify the font family of code elements */
-}
-
-pre {
-  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
-}
-
-b,
-strong {
-  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
-}
-
-/* https://gist.github.com/unruthless/413930 */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-table {
-  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
-  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
-}
-
-iframe {
-  border-style: none;
-}
-
-/* # =================================================================
-   # Forms
-   # ================================================================= */
-input {
-  border-radius: 0;
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
-}
-
-[type=search] {
-  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
-  outline-offset: -2px; /* Correct the outline style in Safari */
-}
-
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
-}
-
-textarea {
-  overflow: auto; /* Internet Explorer 11+ */
-  resize: vertical; /* Specify textarea resizability */
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit; /* Specify font inheritance of form elements */
-}
-
-optgroup {
-  font-weight: bold; /* Restore the font weight unset by the previous rule */
-}
-
-button {
-  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
-}
-
-button,
-select {
-  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
-}
-
-/* Apply cursor pointer to button elements */
-button,
-[type=button],
-[type=reset],
-[type=submit],
-[role=button] {
-  cursor: pointer;
-}
-
-/* Remove inner padding and border in Firefox 4+ */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/* Replace focus style removed in the border reset above */
-button:-moz-focusring,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  outline: 1px dotted ButtonText;
-}
-
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
-}
-
-/* Remove the default button styling in all browsers */
-button,
-input,
-select,
-textarea {
-  background-color: transparent;
-  border-style: none;
-}
-
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline-width: 0;
-}
-
-/* Style select like a standard input */
-select {
-  -moz-appearance: none; /* Firefox 36+ */
-  -webkit-appearance: none; /* Chrome 41+ */
-}
-
-select::-ms-expand {
-  display: none; /* Internet Explorer 11+ */
-}
-
-select::-ms-value {
-  color: currentColor; /* Internet Explorer 11+ */
-}
-
-legend {
-  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
-  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
-  display: table; /* Correct the text wrapping in Edge and IE */
-  max-width: 100%; /* Correct the text wrapping in Edge and IE */
-  white-space: normal; /* Correct the text wrapping in Edge and IE */
-  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
-}
-
-::-webkit-file-upload-button {
-  /* Correct the inability to style clickable types in iOS and Safari */
-  -webkit-appearance: button;
-  color: inherit;
-  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
-}
-
-/* Replace pointer cursor in disabled elements */
-[disabled] {
-  cursor: default;
-}
-
-/* # =================================================================
-   # Specify media element style
-   # ================================================================= */
-img {
-  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
-}
-
-/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
-progress {
-  vertical-align: baseline;
-}
-
-/* # =================================================================
-   # Accessibility
-   # ================================================================= */
-/* Specify the progress cursor of updating elements */
-[aria-busy=true] {
-  cursor: progress;
-}
-
-/* Specify the pointer cursor of trigger elements */
-[aria-controls] {
-  cursor: pointer;
-}
-
-/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
-[aria-disabled=true] {
-  cursor: default;
-}
-
 body {
   background: #1A1718;
   background: linear-gradient(162deg, rgb(26, 23, 24) 0%, rgb(116, 72, 50) 40%, rgb(12, 32, 55) 82%, rgb(3, 8, 16) 100%);
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-title {
+  background-image: url("../image/header,image1.png");
+  background-size: cover;
+  background-position: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 .title01 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  color: white;
+  padding: 0 1.5rem;
+  height: 70px;
+  background-image: url("../image/header,image1.png");
+  background-size: cover;
+  position: relative;
+  z-index: 100;
 }
-
-#drawerMenu ul {
-  display: flex;
-  gap: 1.5rem;
-}
-
-#drawerMenu ul li {
-  display: flex;
-}
-
 .title01 h1 {
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+.title01 .drawerButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 110;
+}
+.title01 .drawerButton span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+.title01 .drawerButton.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.title01 .drawerButton.active span:nth-child(2) {
+  opacity: 0;
+}
+.title01 .drawerButton.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.title01 #drawerMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: rgba(26, 23, 24, 0.98);
+  transition: 0.3s;
+  padding-top: 100px;
+  z-index: 105;
+}
+.title01 #drawerMenu.active {
+  right: 0;
+}
+.title01 #drawerMenu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.title01 #drawerMenu ul a {
+  font-size: 1.2rem;
 }
 
 .sec01 {
-  display: grid;
-  grid-template-rows: 220px 90px 220px 90px;
-  grid-template-columns: 125px 125px 125px;
-}
-
-.text01 {
-  font-size: 10px;
-  line-height: 1.5rem;
-  letter-spacing: 0.25rem;
-  grid-row: 3/4;
-  grid-column: 1/4;
-  color: white;
-}
-
-.title01, #title02, #title03, #title04 {
-  background-image: url(../image/header\,image1.png);
-  height: 50px;
-  width: 375px;
   text-align: center;
 }
-
-.title03, .pot, .barrel, .bottle01 {
-  align-items: center;
-  justify-content: center;
-}
-
-.title01 h1 {
-  font-size: 1rem;
-  max-width: 60%;
-}
-
-.title01 ul {
-  font-size: 10px;
-}
-
-.bar {
-  height: 100%;
+.sec01 .bar {
   width: 100%;
-  grid-column: 1/4;
+  height: auto;
+}
+.sec01 .text01-wrap {
+  padding: 2rem 1.5rem;
+  line-height: 1.8;
+  font-size: 0.9rem;
 }
 
-.text01 {
+.merchandise-item, .towbottleall, .shoppage {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #31271D;
+  margin: 0 1rem 3rem;
+  padding: 2rem;
+  border-radius: 8px;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.item-img, .towbottleimg, .shopimg01 {
   max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bottle-lists {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
-
-.merchandise {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  gap: 90px;
-}
-
-.wheatall, .potall, .barrelall, .bottleall {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.55);
-  width: 350px;
-  height: 850px;
-  border: solid 1px black;
-  text-align: center;
-  line-height: 1.2rem;
-  letter-spacing: 0.3rem;
-}
-
-.wheatall {
-  height: 650px;
-}
-
-.bottleall {
-  height: 700px;
-}
-
-.title03,
-.pot,
-.barrel,
-.bottle01 {
-  color: #595045;
-}
-
-.text02,
-.text03,
-.text04,
-.text05 {
-  line-height: 1.5rem;
+.bottle-lists ul {
+  background: rgba(255, 255, 255, 0.5);
   padding: 1rem;
-  color: #595045;
-}
-
-.wheat, .putimg, .barrelimg, .bottleimg01 {
-  max-width: 100%;
-  height: 220px;
-  margin: auto 0;
-}
-
-.towbottleimg {
-  max-width: 100%;
-  height: 250px;
-}
-
-.shopimg01 {
-  width: 375px;
-  height: 230px;
-}
-
-.towbottleall, .towbottle, .bottle700, .bottle1000 {
-  background-color: rgba(255, 255, 255, 0.55);
-  max-width: 100%;
+  border-radius: 5px;
   text-align: left;
-  padding: 1rem;
-  color: #595045;
 }
 
-.towbottle {
-  text-align: center;
+.shopall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.shoppage {
-  display: grid;
-  grid-template-rows: 100px 150px 140px 50px 100px;
-  grid-template-columns: 45px 140px 140px 45px;
+.shopall .shoppage {
+  width: calc(100% - 2rem);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.shopimg01 {
-  grid-row: 2/3;
+.shopall .shop-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
-
-.shop01 {
-  background-image: url(image/shopbtn01.png);
-  text-align: center;
-  border-radius: 10px;
-  width: 310px;
+.shopall .shop01 {
+  background-image: url("../image/shopbtn01.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 280px;
   height: 60px;
-  grid-row: 4/5;
-  grid-column: 2/4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #31271D;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.shopall .shop01:hover {
+  opacity: 0.8;
 }
 
 .footer {
-  background-color: #666666;
-  color: white;
-  max-width: 100%;
-  gap: 1rem;
-}
-
-.alert,
-.copy {
   text-align: center;
+  padding: 3rem 1rem;
+  background: #2a2522;
+}
+.footer .alert {
+  font-size: 1rem;
+  color: #e2c0a8;
+  margin-bottom: 1rem;
+}
+.footer .copy {
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 @media (min-width: 900px) {
-  .title01, #title02, #title03, #title04 {
-    width: 1920px;
+  .title01 {
+    padding: 0 5%;
   }
   .title01 h1 {
-    font-size: 3rem;
-  }
-  #drawerMenu ul {
     font-size: 2rem;
-    gap: 6rem;
+  }
+  .title01 .drawerButton {
+    display: none;
+  }
+  .title01 #drawerMenu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding-top: 0;
+  }
+  .title01 #drawerMenu ul {
+    flex-direction: row;
+    gap: 3rem;
   }
   .sec01 {
-    grid-template-columns: 584px 584px 584px 584px 584px;
-    grid-template-rows: 180px 180px 180px 180px 180px;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 4rem auto;
+    gap: 3rem;
   }
-  .bar {
-    width: 1920px;
-    height: 900px;
-    grid-column: 1/4;
-    grid-row: 1/6;
+  .sec01 .bar {
+    width: 50%;
   }
-  .text01 {
-    font-size: 20px;
-    grid-column: 2/4;
-    grid-row: 2/3;
+  .sec01 .text01-wrap {
+    width: 50%;
+    text-align: left;
   }
-  .title01, #title02, #title03, #title04 {
-    height: 100px;
-    width: 1920px;
-    font-size: 2.5rem;
+  .merchandise-item {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
   }
-  .wheatall, .potall, .barrelall, .bottleall {
-    flex-direction: row;
-    width: 1200px;
-    height: 900px;
+  .merchandise-item .item-img {
+    width: 40%;
+    max-height: 400px;
+    margin-bottom: 0;
+  }
+  .merchandise-item .item-content {
+    width: 60%;
+  }
+  .merchandise-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .shoppage {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem;
+  }
+  .shoppage .shopimg01 {
+    width: 50%;
+    max-height: 500px;
+    margin-bottom: 0;
+  }
+  .shoppage .shop-btn-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
   }
   .towbottleall {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.55);
-    width: 1200px;
-    height: 700px;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 3rem;
   }
-  .shoppage {
-    grid-template-columns: 384px 384px 384px 384px 384px;
-    grid-template-rows: 260px 260px 260px 260px 260px;
+  .towbottleall .towbottleimg {
+    width: 40%;
+    max-height: 450px;
   }
-  .shopimg01 {
-    width: 1920px;
-    height: 1300px;
-    grid-column: 1/6;
-    grid-row: 1/6;
+  .towbottleall .details-content {
+    width: 60%;
+    text-align: left;
   }
-  .shop01 {
-    grid-column: 4/5;
-    grid-row: 3/4;
+  .towbottleall .bottle-lists {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+@use "ress";
+@use "variables" as *;
+@use "mixins" as *;
+
+body {
+    background-color: $baseColor;
+}
+
+.sec {
+    max-width: $contentWidth;
+    max-width: var(--contentWidth);
+    margin-inline: auto;
+    border: 1px solid $mainColor;
+    padding: var(--paddingS);
+    background-color: var(--maincolor);
+
+    @include flexBetween;
+}
+
+.test01 {
+    color: $mainColor;
+    @include textStyle;
+}
+
+.test02 {
+    color: var(--maincolor);
+    @include textStyle(#666666);
+}
